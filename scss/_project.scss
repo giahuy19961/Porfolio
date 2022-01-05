@@ -1,0 +1,102 @@
+
+.slider__item{
+    padding:30px 60px;
+    position: relative;
+    overflow: hidden;
+  
+     img{
+        max-height: 600px;    
+        object-fit:fill;
+       
+        border-radius:25px;
+        box-shadow: 5px 5px 10px grey;
+    }
+ 
+    &--overlay{
+        position: absolute;
+        inset:0;
+        z-index: 20;   
+        left:20%;
+        top:50%;
+        transform: translateY(-50%);    
+        opacity: 0;
+        
+
+    }
+    &:hover img{
+        
+        padding:30px 60px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-color: rgb(204, 204, 204);
+        background-position: center center;
+        filter: blur(15px);
+    }
+    &:hover &--overlay{
+        
+        opacity: 1;
+        transition: all .1s ease-in-out;
+        
+    }
+
+}
+.project__info{
+    li{
+        padding:15px 200px 15px 40px;
+        text-align: left;
+    }
+   
+    &-name{
+        font-size: $fs-xl;
+        font-weight:bold;
+        background: $gradient-reverse;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        &::after {
+            content: "";
+            height: 3px;
+            width: 200px;
+            position: absolute;
+           
+            left: 180px;
+            bottom: 0;
+            transform: translateX(-50%);
+            background-color: $secondary;
+          }
+    }
+    &-description, &-tech{
+        span:first-child{
+            font-weight: bold;
+            font-size: $fs-sm;
+            padding-right:10px;
+        }
+    }
+    &-link{
+        display: flex;
+        a{
+            padding:10px;
+            color:#000;
+            display: flex;
+           
+            align-items: center;
+            ion-icon{
+                font-size:$fs-nm;
+               
+            }
+            span{
+                text-decoration:underline;
+                color:#000;
+                font-size: $fs-sm;
+                margin-left: 10px;
+                
+            }
+        }
+    }
+    
+}
+@include responsive("mobile"){
+    #project{
+        display: none;
+    }
+}

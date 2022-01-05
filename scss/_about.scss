@@ -1,0 +1,88 @@
+.about{
+    display:flex;
+    gap:30px 50px;
+    &__image{
+        width: 30%;
+        flex-shrink: 0;
+        img{
+            border-radius: 50%;
+            box-shadow:  2px 5px $secondary;
+        }
+       
+    }
+    &__info{
+        flex:1;
+        &-heading{
+            font-size: $fs-xl;
+            &::first-letter{
+               font-size: 60px;
+               color: $secondary
+            }
+        }
+        &-list{
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap:20px;
+            padding:20px 0;
+           
+        }
+        &-item{           
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+            & span:first-child{
+                width:200px;
+                flex-shrink: 0;
+              background:$gradient;
+              padding:20px 25px;
+              font-size: $fs-nm;
+              font-weight: bold;
+              color:$secondary-text;
+              
+            }
+            & span:last-child{
+                flex:1;
+                text-align: center;
+                border-bottom: 1px solid $secondary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: $fs-nm;
+                font-weight: bold;
+            }
+        }
+        &-social{
+            display: flex;
+            gap:20px;
+            a{
+                cursor: pointer;
+                ion-icon{
+                    font-size: $fs-lg;
+                    color:$primary-text;
+
+                }
+            }
+        }
+
+    }
+    @include responsive("tablet"){
+        flex-direction: column;
+        
+        &__image{
+            width: 100%;
+        }
+        &__info{
+            &-item{
+                & span:first-child{
+                     width:100px;
+                     font-size: $fs-sm;
+                }
+                & span:last-child{
+                    font-size: $fs-sm;
+                }
+            }
+        }
+        
+    }
+}

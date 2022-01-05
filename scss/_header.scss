@@ -1,0 +1,103 @@
+header{
+    // position: fixed;
+    // left:0;
+    // right: 0;
+    // z-index: 99;
+    background: $gradientgrey;
+    // top:0;
+    
+}
+.header{
+    
+    &__wrap{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+    &__logo{
+        flex-shrink: 0;
+    }
+    &__menu{
+        display:flex;
+        justify-content:space-between;
+        gap:20px;
+
+        &-item{
+            padding:15px 20px;
+            font-size:$fs-nm;
+            font-weight: bold;
+            position: relative;
+            
+            &> a {
+                color:$primary-text;
+                letter-spacing: 1px;
+                color:$secondary-text;
+                & >span{
+                    color:$secondary;
+                    font-size:$fs-lg;
+                }
+               
+            }
+            &::after{
+              position:absolute;
+              content: "";
+              width: 80%;
+              left:50%;
+              transform: translateX(-50%);
+              bottom: 0px;
+              height:0;
+              background:$gradient;
+              transition: height .3s ease-in-out;
+              
+            }
+            &:hover::after{
+                display: block;
+                height:5px;
+            }
+            
+           
+        }
+        &  li:last-child{
+            background:$gradient;
+            border-radius: 25px;
+            transition: all .5s ease-in-out;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            & > a {
+                color:$secondary-text
+            }
+            &:hover{
+                background:$gradient-reverse;
+            }
+            &:hover::after{
+                display: none;
+            }
+
+        }
+
+    }
+    &__mobile{
+        border:2px solid $secondary;
+        padding:5px;
+        display: none;
+        &-icon{
+            ion-icon{
+                color: $secondary;
+                font-size: 35px;
+            }
+        } 
+       
+    }
+
+    @include responsive("lg-screen"){
+        &__menu{
+            display:none;
+        }
+        &__mobile{
+            display:block;
+            cursor: pointer;
+        }
+    }
+}

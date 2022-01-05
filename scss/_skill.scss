@@ -1,0 +1,45 @@
+.skill{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    height: 100%;
+    
+    &__header{
+        font-weight: bold;
+        font-size:$fs-xl;
+        text-transform:uppercase;
+       margin-bottom: 50px; 
+
+    }
+    &__list{
+        display:flex;
+        justify-content:space-between;
+        width:100%;
+        padding:0 50px;
+        &-basic,&-advance{
+            width:50%;
+           li{
+               text-align: left;
+               padding:20px;
+               ion-icon{
+                   font-size:25px;
+                   color:aqua;
+               }
+               span{
+                font-size:$fs-nm;
+                padding:20px;
+                
+               }
+            //    @include responsive("mobile"){
+            //        ion-icon{
+            //            font-size:$fs-sm;
+            //        }
+            //        span{
+            //            font-size: $fs-sm;
+            //        }
+            //      }
+           }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    display: flex;
+    left: -100%;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+    --content-width: 380px;
+    &__content {
+      width: var(--content-width);
+      height: 100%;
+      background-color: #fff;
+      padding: 30px;
+      padding-top: 50px;
+      & img{
+        max-width:100%;
+        height: auto;
+        width: auto;
+        
+      }
+      
+    }
+    &__overlay {
+      width: calc(100% - var(--content-width));
+      height: 100%;
+      background-color: #000;
+      opacity: 0.5;
+    }
+    &__close{
+        display: flex;
+       justify-content: flex-end;
+       align-items: center;
+       cursor: pointer;
+       div{
+        & > ion-icon{
+            font-size: 50px;
+            color: $secondary;
+        }
+        transition: color 0.3s ease-in-out;
+        position: relative;
+        & span {
+          position: absolute;
+          background:$secondary;
+          display: block;
+          transition: all 0.7s ease;
+        }
+        & span:first-child {
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+        }
+        & span:nth-child(2) {
+          right: -1px;
+          top: 0;
+          width: 2px;
+          height: 0;
+        }
+        & span:nth-child(3) {
+          bottom: 0;
+          right: 0px;
+          width: 0;
+          height: 2px;
+        }
+        & span:nth-child(4) {
+          left: -1px;
+          bottom: 0;
+          height: 0;
+          width: 2px;
+        }
+        &:hover span:nth-child(odd) {
+          width: 100%;
+        }
+        &:hover span:nth-child(even) {
+          height: 100%;
+        }
+  
+        &:hover {
+          background: #fff;
+          color: $secondary;
+        }
+
+           
+         
+       }
+    
+       
+       
+    }
+    &__menu{
+      display: flex;
+      flex-direction: column;
+      gap:20px;
+      padding:20px;
+      align-items: flex-start;
+    }
+    &__item{
+      padding:5px 10px;
+      a{
+        font-size: $fs-nm;
+        text-transform: uppercase;
+        color:$primary-text;
+        font-weight: bold;
+
+      }
+      &:hover a{
+        color: $secondary;
+      }
+    }
+  }
+
+
+
+  .sidebar-mobile--open {
+    transform: translateX(100%);
+  }
+  
+  
+ .sidebar__content{
+
+ }

@@ -1,0 +1,102 @@
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .contact__header{
+        text-align: center;
+        margin: 15px 0;
+        text-transform: uppercase;
+        font-size: $fs-nm;
+        padding-top:20px;
+        padding-bottom:20px;
+
+    }
+    form{
+        .contact__form{
+            &-body{
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                gap:20px 30px;
+                margin-bottom: 20px;
+            }
+            &-wrap{
+                width:100%;
+                display:flex;
+                flex-direction: column;
+                gap:20px;
+                
+            }
+            &-title{
+                font-style: $fs-nm;
+                font-weight: bold;
+                
+            }
+            &-input{
+                width: 100%;
+                padding:15px;
+                font-size: $fs-sm;
+                border-radius: 5px;
+                
+            }
+
+    }
+    .contact__submit{
+        display:flex;
+        justify-content:center;
+        button{
+            transition: color 0.3s ease-in-out;
+            position: relative;
+            & span {
+              position: absolute;
+              background:$secondary;
+              display: block;
+              transition: all 0.7s ease;
+            }
+            & span:first-child {
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 2px;
+            }
+            & span:nth-child(2) {
+              right: -1px;
+              top: 0;
+              width: 2px;
+              height: 0;
+            }
+            & span:nth-child(3) {
+              bottom: 0;
+              right: 0px;
+              width: 0;
+              height: 2px;
+            }
+            & span:nth-child(4) {
+              left: -1px;
+              bottom: 0;
+              height: 0;
+              width: 2px;
+            }
+            &:hover span:nth-child(odd) {
+              width: 100%;
+            }
+            &:hover span:nth-child(even) {
+              height: 100%;
+            }
+      
+            &:hover {
+              background: #fff;
+              color: #fb9434  ;
+              border: none;
+              font-weight: bold;
+              
+            }
+    
+            padding:15px 50px;
+            font-size: $fs-nm;
+            border-radius: 10px;
+        }
+    }
+    }
+
+}
+

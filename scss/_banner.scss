@@ -1,0 +1,89 @@
+
+
+.banner{
+    display:flex;
+    height: 100%;
+    align-items: center;
+  
+    &__content{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        gap:20px;
+        &-heading{
+            font-size: $fs-xl;
+            background: -webkit-linear-gradient(rgba(251,148,52,1) , rgba(253,193,3,1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &-name{
+            font-size: $fs-lg;
+        }
+        &-description::first-letter{
+            font-size: $fs-xl;
+            color: $secondary;
+            font-weight: 500;
+            
+            
+        }
+        &-description{
+            line-height:25px;
+        }
+        &-downloadcv{
+            button{
+                border-radius: 25px;
+                padding:15px 32px;
+                &:hover{
+                    background:$gradient-reverse;
+                    transition: all cubic-bezier(0.215, 0.610, 0.355, 1);
+                }
+            }
+          
+        }
+    
+
+    }
+    &__image{
+        flex:1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-background{
+            background:url("../assets/img/avatarbackground.jpg");
+            background-size:cover;
+            border-radius: 0;
+            width:400px;
+            height: 400px;
+            cursor: pointer;
+            transition: all 2s ease-in-out;
+            & > img{
+                width: 660px;
+                position: absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%,-40%);
+                height:100%;      
+                object-fit: contain;
+            }
+            &:hover {
+                border-radius: 50%;      
+            }
+            @include responsive("tablet"){
+               display: none;
+               
+            }
+        }    
+      
+    }
+    // mobile setting 
+    @include responsive("tablet"){
+        flex-direction: column;
+        height:100vh;
+        align-items: center;
+        justify-content: center;
+        padding-top:80px;
+       
+    }
+}
